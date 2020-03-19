@@ -13,7 +13,7 @@ Local server (ampps,xampp e.t.c) with
 
 ### Installing
 ```
-git clone git@github.com:avishekavi143/todo-app.git
+git clone https://github.com/avishekavi143/todo-app.git
 ```
 Switch to the repo folder
 ```
