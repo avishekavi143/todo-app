@@ -25,7 +25,7 @@ composer install
 ```
 Copy the example.env file and make the required configuration changes in the .env file
 ```
-cp .env.example .env
+cp .env.example .env 
 ```
 Generate a new application key
 ```
@@ -43,8 +43,8 @@ You can now access the server at http://localhost:8000
 
 ## Running the tests
 
-Add 6 to 7 todo task
-Now You can Edit, View detail, Mark as complete, delete task. You can also see the task which are completed and Mark as Pending and delete the todo tasks.
+Add 6 to 7 todo task,
+Now You can Edit, View detail, Mark as complete, Delete todo task. You can also see the task which are completed and can Mark as Pending and Delete the todo tasks.
 
 ## Built With
 
