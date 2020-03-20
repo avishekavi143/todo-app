@@ -20,11 +20,11 @@ Route::put('/update/{id}','TaskController@update')->name('task.update');
 Route::delete('/delete/{id}','TaskController@destroy')->name('task.destroy');
 
 // Task Status Update
-Route::get('/setcompleted/{id}','TaskController@set_completed')->name('task.setcompleted');
-Route::get('/setincompleted/{id}','TaskController@set_incompleted')->name('task.setincompleted');
+Route::get('/setcompleted/{id}','TaskController@setCompleted')->name('task.setcompleted');
+Route::get('/setincompleted/{id}','TaskController@setIncompleted')->name('task.setincompleted');
 
 // completed task list
-Route::get('/completedlist','TaskController@completed_list')->name('task.completedlist');
+Route::get('/completedlist','TaskController@completedList')->name('task.completedlist');
 
 // task Detail
 Route::post('/getdetail','TaskController@show')->name('task.getdetail');

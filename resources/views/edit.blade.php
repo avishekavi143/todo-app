@@ -28,11 +28,11 @@
 			<input type="hidden" name="_method" value="PUT">
 			  <div class="form-group">
 			    <label for="exampleInputEmail1">Todo Task *</label>
-			    <input type="text" name="updatedTask" value="{{$taskToEdit->task}}" class="form-control" required="">
+			    <input type="text" name="updatedTask" value="{{$taskToEdit->task_title}}" class="form-control" required="">
 			  </div>
 			  <div class="form-group">
 			    <label for="exampleInputPassword1">Detail</label>
-			    <textarea class="form-control" id="updatedTaskDetail" rows="3" name="updatedTaskDetail" placeholder="Todo task detail">{{$taskToEdit->taskdetail}}</textarea>
+			    <textarea class="form-control" id="updatedTaskDetail" rows="3" name="updatedTaskDetail" placeholder="Todo task detail">{{$taskToEdit->task_detail}}</textarea>
 			  </div>
 			  <button type="submit" class="btn btn-primary">Update</button>
 			</form>

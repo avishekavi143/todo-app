@@ -40,7 +40,7 @@
 					@if(count($tasks) > 0)
 						@foreach($tasks as $key=>$tas)
 						<tr style="height:60px;">
-							<td width="70%">{{$tas->task}}</td>
+							<td width="70%">{{$tas->task_title}}</td>
 							<td width="10%">
 								{{($tas->status == 0)?'Pending':'Completed'}}
 							</td>

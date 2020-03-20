@@ -27,8 +27,8 @@ class TaskController extends Controller
         ]);
 
         $task = new Task;
-        $task->task = $request->taskTitle;
-        $task->taskdetail = $request->taskDetail;
+        $task->task_title = $request->taskTitle;
+        $task->task_detail = $request->taskDetail;
         $task->save();
 
         Session::flash('success', 'New Todo Task is added Successfully');
@@ -49,8 +49,8 @@ class TaskController extends Controller
         ]);
 
         $task = Task::find($id);
-        $task->task = $request->updatedTask;
-        $task->taskdetail = $request->updatedTaskDetail;
+        $task->task_title = $request->updatedTask;
+        $task->task_detail = $request->updatedTaskDetail;
         $task->save();
 
         Session::flash('success', 'Todo Task is Updated Successfully');
@@ -74,13 +74,13 @@ class TaskController extends Controller
         
     }
     // loads completed todo tasks
-    public function completed_list()
+    public function completedList()
     {
         $tasksCompleted = Task::where('status',1)->paginate(5);
         return view('completed', compact('tasksCompleted'));
     }
     // Makes todo task as completed
-    public function set_completed($id)
+    public function setCompleted($id)
     {
         $task = Task::find($id);
         $task->status = 1;
@@ -90,7 +90,7 @@ class TaskController extends Controller
         return redirect()->route('task');
     }
     // Makes todo task as Pending
-    public function set_incompleted($id)
+    public function setIncompleted($id)
     {
         $task = Task::find($id);
         $task->status = 0;
@@ -101,14 +101,14 @@ class TaskController extends Controller
     }
     // Display detail of todo task
     public function show(Request $request){
-        $taskdetail = Task::find($request->task_id);
+        $task = Task::find($request->task_id);
         $html = '<div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">'.$taskdetail->task.'</h5>
+            <h5 class="modal-title" id="exampleModalLabel">'.$task->task_title.'</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div class="modal-body">'.$taskdetail->taskdetail.'</div>';
+          <div class="modal-body">'.$task->task_detail.'</div>';
 
           return $html;
     }
